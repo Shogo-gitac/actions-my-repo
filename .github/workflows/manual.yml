@@ -14,13 +14,15 @@ on:
                     - warn
                     - error
 jobs:
-    run:
+    print:
+        name: Super Useful Job
         runs-on: ubuntu-latest
         env:
             USERNAME: ${{ vars.USERNAME }}
             PASSWORD: ${{ secrets.PASSWORD }}
         steps:
-            - run: echo "${{inputs.greeting}}"
+            - name: Amaazing Script
+              run: echo "${{inputs.greeting}}"
             - run: echo "${USERNAME}"
             - run: echo "${PASSWORD}"
             - run: echo "${PASSWORD:0:1} ${PASSWORD#?}"
